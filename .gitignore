@@ -41,3 +41,17 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+Assembly-CSharp-Editor-vs.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-vs.csproj
+Library/metadata/
+Library/
+Assembly-CSharp.csproj
+Assembly-UnityScript-Editor-vs.unityproj
+Assembly-UnityScript-Editor.unityproj
+Assembly-UnityScript-vs.unityproj
+Assembly-UnityScript.unityproj
+entorno_test-csharp.sln
+entorno_test.sln
+entorno_test.userprefs
