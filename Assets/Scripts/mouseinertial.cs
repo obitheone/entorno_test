@@ -59,7 +59,7 @@ public class mouseinertial : MonoBehaviour
 			_clonelinerender[renderline] = (GameObject)Instantiate(linerender);		
 			linerenderscript script = _clonelinerender[renderline].GetComponent("linerenderscript") as linerenderscript;
 
-			hand = GameObject.Find("Beta:RightArm");
+			hand = GameObject.Find("Beta:RightHand");
 			script.origin=hand.transform;
 			
 			script.destination=gameObject.transform;
