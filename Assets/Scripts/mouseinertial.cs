@@ -24,7 +24,7 @@ public class mouseinertial : MonoBehaviour
 
 	void Start()
 	{
-		_clonelinerender = new GameObject[10];
+		_clonelinerender = new GameObject[20];
 		renderline=0;
 	}
 

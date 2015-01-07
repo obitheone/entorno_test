@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 0}
   destination: {fileID: 0}
-  lineDrawSpeed: .00999999978
+  lineDrawSpeed: 2
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
