@@ -26,13 +26,13 @@ public class LightningBolt : MonoBehaviour
 
 		particleEmitter.Emit(zigs);
 		particles = particleEmitter.particles;
-
 	}
 	
 	void Update ()
 	{
 
 		if (target) {
+						audio.mute=false;
 						if (noise == null)
 								noise = new Perlin ();
 				
@@ -56,15 +56,30 @@ public class LightningBolt : MonoBehaviour
 						particleEmitter.particles = particles;
 
 						if (particleEmitter.particleCount >= 2) {
-								if (startLight)
+								if (startLight) 
+									{
 										startLight.transform.position = particles [0].position;
-								if (endLight)
+										startLight.range=0.4f;
+									}
+								if (endLight) 
+									{
 										endLight.transform.position = particles [particles.Length - 1].position;
+										endLight.range=10;
+									}
 						}
 				}
 		else {
 			particleEmitter.particles = null;
+			audio.mute=true;
+			if (endLight) 
+			{
+				endLight.range=0;
+			}
+			if (startLight) 
+			{
+				startLight.range=0;
+			}
 		}
-
-}
+		
+	}
 }

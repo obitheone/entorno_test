@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Smothmove : MonoBehaviour {
 
-	public float speed =1.0f;
-	private Vector3 range=new Vector3 (1.0f, 1.0f, 1.0f); 
+	public float speed =0.2f;
+	private Vector3 range=new Vector3 (0.5f, 0.5f, 0.5f); 
 	private Perlin noise;
 	private Vector3 position;
 
