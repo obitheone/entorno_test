@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Smothmove : MonoBehaviour {
 
-	public float speed =0.2f;
-	private Vector3 range=new Vector3 (0.5f, 0.5f, 0.5f); 
+	public float speed =0.0f;
+	private Vector3 range=new Vector3 (0.15f, 0.15f, 0.15f); 
 	private Perlin noise;
 	private Vector3 position;
 
@@ -15,7 +15,8 @@ public class Smothmove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		transform.position = position + Vector3.Scale(SmoothRandom.GetVector3(speed), range);
+	void FixedUpdate () {
+
+		transform.position += Vector3.Scale(SmoothRandom.GetVector3(speed), range);
 	}
 }

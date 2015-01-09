@@ -54,14 +54,11 @@ public class mouseinertial : MonoBehaviour
 			_temp=Camera.main.transform.position;
 		*/
 			GameObject Beta = GameObject.Find ("Beta");
-			//target=Beta.transform;
-			//target.Translate(Vector3.forward * Time.deltaTime);
-			//target.position=;
-						
+
+			Vector3 localForward = Beta.transform.worldToLocalMatrix.MultiplyVector(Beta.transform.forward);
+
 			step = speed * Time.deltaTime;
-			transform.position = Vector3.MoveTowards (transform.position, new Vector3 (Beta.transform.position.x, 2.0f+Beta.transform.position.y ,Beta.transform.position.z), step);
-			//transform.Translate(5*Beta.transform.forward.x * Time.deltaTime);
-			//transform.position = Vector3.MoveTowards(transform.position, target.position, 10 * Time.deltaTime);
+			transform.position = Vector3.MoveTowards (transform.position, new Vector3 (Beta.transform.position.x+Beta.transform.forward.x*2, 2.0f+Beta.transform.position.y ,Beta.transform.position.z+Beta.transform.forward.z*2), step);
 				} 
 			else {
 				rigidbody.useGravity=true;
