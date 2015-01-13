@@ -47,7 +47,7 @@ public class abiltycontroller : MonoBehaviour {
 				//{
 				//	_beamobject.AddComponent ("Smothmove");
 				//}
-				_energy=_energy+10;
+				_energy=_energy+300*Time.deltaTime;
 				//Smothmove smoothscript = _beamobject.GetComponent("Smothmove") as Smothmove;
 				//smoothscript.speed=(_energy - 60)/100;
 				//_beamobject.light.intensity=_energy/800;
@@ -117,13 +117,6 @@ public class abiltycontroller : MonoBehaviour {
 				_horizontal=0;
 				_key_press = "";
 			}
-
-			break;
-		case "z":
-			break;
-		case "x":
-			break;
-		case "c":
 			break;
 		default:
 

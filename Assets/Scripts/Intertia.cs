@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Intertia : MonoBehaviour {
 
-	public float speed =5.0f;
+	public float speed =10.0f;
 	public float offset_lateral=0f;
 	public float offset_horizontal=0f;
+	private Vector3 _prevPosition;
 	// Use this for initialization
 	void Start () {
 		rigidbody.useGravity=false;
@@ -13,6 +14,7 @@ public class Intertia : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+			_prevPosition = transform.position;
 			GameObject Beta = GameObject.Find ("Beta");	
 			Vector3 localForward = Beta.transform.worldToLocalMatrix.MultiplyVector(Beta.transform.forward);	
 			float step = speed * Time.deltaTime;
@@ -24,6 +26,7 @@ public class Intertia : MonoBehaviour {
 		} 
 	void OnDestroy() {
 		rigidbody.useGravity=true;
+		rigidbody.velocity =  20*(transform.position -_prevPosition) ;//Añadimos la incercia al finalizar el movimiento.
 	}
 
 }
