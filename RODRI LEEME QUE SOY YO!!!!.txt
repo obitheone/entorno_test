@@ -1,0 +1,24 @@
+Pasos a seguir:
+
+1- Abrir la escena Locomotion
+
+
+Teclas:
+
+f: Antigravedad
+b: Blackhole
+8-keypad:Arriba mientras esta la antigravedad activa
+2-keypad:Abajo
+4-keypad:izquierda
+6-keypad:derecha
+
+Boton izquierdo mientras esta con antigravedad: Suma energia al objeto
+Boton derecho mientras esta con la antigravedad: empuja el objeto de frente con la energia acumulada
+
+Ficheros interesantes:
+
+- abilitycontroller.cs: Atachado a la camara tiene toda la logica de los poderes del personaje principal
+- blackhole.cs: el agujero negro
+- inertia.cs: script para que el objeto siga al player mientras flota
+- LightningBolg.cs: efecto del rayo antigravedad
+- Perlin.cs ruido para el rayo antigravedad
