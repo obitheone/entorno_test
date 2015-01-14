@@ -33,7 +33,7 @@ public class LightningBolt : MonoBehaviour
 	void Update ()
 	{
 
-		if (activel) {
+		if (active) {
 						audio.mute=false;
 						if (noise == null)
 								noise = new Perlin ();
