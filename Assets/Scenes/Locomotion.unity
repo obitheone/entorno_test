@@ -460,7 +460,7 @@ EllipsoidParticleEmitter:
   m_GameObject: {fileID: 145806243}
   serializedVersion: 2
   m_Enabled: 1
-  m_Emit: 1
+  m_Emit: 0
   minSize: .5
   maxSize: 1
   minEnergy: .5
@@ -491,7 +491,7 @@ ParticleRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 36f0739bc8d49a0409e0f86c8bbb67a8, type: 2}
+  - {fileID: 2100000, guid: 9f79a16aa35f51747a3c738dcf746cc0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
