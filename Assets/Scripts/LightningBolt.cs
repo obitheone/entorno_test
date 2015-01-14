@@ -7,7 +7,8 @@ using System.Collections;
 
 public class LightningBolt : MonoBehaviour
 {
-	public Transform target;
+	public Vector3 target;
+	public bool active = false;
 	public int zigs = 100;
 	public float speed = 1f;
 	public float scale = 1f;
@@ -26,12 +27,13 @@ public class LightningBolt : MonoBehaviour
 
 		particleEmitter.Emit(zigs);
 		particles = particleEmitter.particles;
+		active = false;
 	}
 	
 	void Update ()
 	{
 
-		if (target) {
+		if (activel) {
 						audio.mute=false;
 						if (noise == null)
 								noise = new Perlin ();
@@ -41,7 +43,7 @@ public class LightningBolt : MonoBehaviour
 						float timez = Time.time * speed * 2.5564f;
 
 						for (int i=0; i < particles.Length; i++) {
-								Vector3 position = Vector3.Lerp (transform.position, target.position, oneOverZigs * (float)i);
+								Vector3 position = Vector3.Lerp (transform.position, target, oneOverZigs * (float)i);
 								Vector3 offset = new Vector3 (noise.Noise (timex + position.x, timex + position.y, timex + position.z),
 							noise.Noise (timey + position.x, timey + position.y, timey + position.z),
 							noise.Noise (timez + position.x, timez + position.y, timez + position.z));

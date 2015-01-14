@@ -33,7 +33,7 @@ public class mouseinertial : MonoBehaviour
 		Screen.showCursor = true;
 		hand = GameObject.Find("Beta:RightHand");
 		script = hand.GetComponent("LightningBolt") as LightningBolt;	
-		if (script.target!=gameObject.transform) 
+		if (script.target!=gameObject.transform.position) 
 		{
 			_pressmouse=false;
 		}
@@ -73,7 +73,7 @@ public class mouseinertial : MonoBehaviour
 					rigidbody.AddForce(Camera.main.transform.forward * 500);
 					hand = GameObject.Find("Beta:RightHand");
 					script = hand.GetComponent("LightningBolt") as LightningBolt;
-					script.target=null;
+					//script.target=null;
 					rigidbody.useGravity=true;
 		}
 		if (Input.GetMouseButtonDown (2)) {
@@ -81,7 +81,7 @@ public class mouseinertial : MonoBehaviour
 					rigidbody.AddForce(-Camera.main.transform.forward * 500);
 					hand = GameObject.Find("Beta:RightHand");
 					script = hand.GetComponent("LightningBolt") as LightningBolt;	
-					script.target=null;
+					//script.target=null;
 					rigidbody.useGravity=true;
 		}
 	}
@@ -101,7 +101,7 @@ public class mouseinertial : MonoBehaviour
 						//emitimos particulas
 						hand = GameObject.Find("Beta:RightHand");
 						script = hand.GetComponent("LightningBolt") as LightningBolt;
-						script.target=gameObject.transform;
+						script.target=gameObject.transform.position;
 						//hand.particleEmitter.emit = true;
 						////
 				}
@@ -109,7 +109,7 @@ public class mouseinertial : MonoBehaviour
 				rigidbody.AddForce(_velocity * fuerza); //fuerza de inercia.
 				hand = GameObject.Find("Beta:RightHand");
 				script = hand.GetComponent("LightningBolt") as LightningBolt;	
-				script.target=null;
+				//script.target=null;
 				_pressmouse = false;
 				rigidbody.useGravity=true;
 			}
