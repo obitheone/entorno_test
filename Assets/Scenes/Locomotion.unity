@@ -1103,7 +1103,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400140, guid: 79efd4c2b57a6d24f9555a5851c00ad1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 13600000, guid: 79efd4c2b57a6d24f9555a5851c00ad1, type: 2}
       propertyPath: m_Radius
@@ -2225,7 +2225,7 @@ Transform:
   - {fileID: 917277824}
   - {fileID: 128828416}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &512860381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3996,7 +3996,7 @@ Transform:
   - {fileID: 835822265}
   - {fileID: 1971323267}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1182832418
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,7 +4362,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4fb977d747bb9c4d8ea60911ec249c5, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4fb977d747bb9c4d8ea60911ec249c5, type: 3}
@@ -4763,7 +4763,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e6e40eda5a3f31244baa1160274612a8, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6e40eda5a3f31244baa1160274612a8, type: 2}
@@ -6199,7 +6199,7 @@ Transform:
   - {fileID: 1660600266}
   - {fileID: 852411220}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1835771610
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,7 +7002,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948876137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44f5c07c36e33204daa1a88607f482ae, type: 3}
   m_Name: 
@@ -7373,4 +7373,4 @@ Transform:
   - {fileID: 1212901817}
   - {fileID: 1876818976}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1

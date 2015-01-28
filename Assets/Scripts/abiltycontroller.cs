@@ -11,9 +11,14 @@ public class abiltycontroller : MonoBehaviour {
 	private Vector3 _hitpoint;
 	private bool _beam=false;
 	private bool _tractor=false;
-	public float speed=0.02f;
 	private float _lateral=0f;
 	private float _horizontal=0f;
+
+	public float speed=0.02f;
+	public GameObject player;
+	public GameObject righthand;
+	public GameObject lefthand;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -44,8 +49,8 @@ public class abiltycontroller : MonoBehaviour {
 			script.offset_horizontal=_horizontal;
 
 			//actualizamos la posicion del rayo
-			GameObject hand = GameObject.Find("Beta:RightHand");
-			LightningBolt script2 = hand.GetComponent("LightningBolt") as LightningBolt;
+			//GameObject hand = GameObject.Find("Beta:RightHand");
+			LightningBolt script2 = righthand.GetComponent("LightningBolt") as LightningBolt;
 			script2.target=_beamobject.transform.position;
 			//fin actualzacion posicion del rayo
 
@@ -56,8 +61,8 @@ public class abiltycontroller : MonoBehaviour {
 
 			if (Input.GetMouseButtonUp (1)) 
 			{ 
-				GameObject Beta = GameObject.Find("Beta");
-				_beamobject.rigidbody.AddForce(Beta.transform.forward * script.energy);
+				//GameObject Beta = GameObject.Find("Beta");
+				_beamobject.rigidbody.AddForce(player.transform.forward * script.energy);
 
 			   //miramos si el raton en este momento hace hit sobre algun objeto, si es asi lanzamos en esa direccion
 				Ray ray =Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -121,9 +126,11 @@ public class abiltycontroller : MonoBehaviour {
 							if(hit.collider.gameObject.GetComponent<Intertia>() == null)
 							{
 								_beamobject=hit.collider.gameObject;
-								hit.collider.gameObject.AddComponent ("Intertia");	
-								GameObject hand = GameObject.Find("Beta:RightHand");
-								LightningBolt script = hand.GetComponent("LightningBolt") as LightningBolt;
+								_beamobject.AddComponent ("Intertia");	
+								Intertia inertiascript = _beamobject.GetComponent("Intertia") as Intertia;
+								inertiascript.player=player;
+								//GameObject hand = GameObject.Find("Beta:RightHand");
+								LightningBolt script = righthand.GetComponent("LightningBolt") as LightningBolt;
 								script.target=hit.collider.gameObject.transform.position;
 								script.active=true;
 								_beam=true;
@@ -139,8 +146,8 @@ public class abiltycontroller : MonoBehaviour {
 				Iluminate (Color.black,"Beamer");
 				Iluminate (Color.black,"Tractor");
 				Destroy (_beamobject.GetComponent("Intertia"));
-				GameObject hand = GameObject.Find("Beta:RightHand");
-				LightningBolt script = hand.GetComponent("LightningBolt") as LightningBolt;
+				//GameObject hand = GameObject.Find("Beta:RightHand");
+				LightningBolt script = righthand.GetComponent("LightningBolt") as LightningBolt;
 				script.active=false;
 				_beam=false;
 				_lateral=0;
@@ -162,16 +169,16 @@ public class abiltycontroller : MonoBehaviour {
 						if (hit.collider.gameObject.tag == "Tractor"){
 							if(hit.collider.gameObject.GetComponent<InverseInertia>() == null)
 							{
-								GameObject Beta = GameObject.Find("Beta");
-								Beta.AddComponent("InverseInertia");
-								InverseInertia script = Beta.GetComponent("InverseInertia") as InverseInertia;
+								//GameObject Beta = GameObject.Find("Beta");
+								player.AddComponent("InverseInertia");
+								InverseInertia script = player.GetComponent("InverseInertia") as InverseInertia;
 								script.hitpoint=hit.point;
 								_hitpoint=hit.point;
 								_tractorobject=hit.collider.gameObject;
 								_tractor=true;
 								///
-								GameObject hand = GameObject.Find("Beta:LeftHand");
-								LightningBolt script2 = hand.GetComponent("LightningBolt") as LightningBolt;
+								//GameObject hand = GameObject.Find("Beta:LeftHand");
+								LightningBolt script2 = lefthand.GetComponent("LightningBolt") as LightningBolt;
 								//Transform test=c
 								//test.position=hit.point;
 								script2.target=hit.point;
@@ -187,11 +194,11 @@ public class abiltycontroller : MonoBehaviour {
 				Iluminate (Color.black,"Tractor");
 				Iluminate (Color.black,"Beamer");
 				_tractor=false;
-				GameObject Beta = GameObject.Find("Beta");
-				InverseInertia script = Beta.GetComponent("InverseInertia") as InverseInertia;
+				//GameObject Beta = GameObject.Find("Beta");
+				InverseInertia script = player.GetComponent("InverseInertia") as InverseInertia;
 				Destroy(script);
-				GameObject hand = GameObject.Find("Beta:LeftHand");
-				LightningBolt script2 = hand.GetComponent("LightningBolt") as LightningBolt;
+				//GameObject hand = GameObject.Find("Beta:LeftHand");
+				LightningBolt script2 = lefthand.GetComponent("LightningBolt") as LightningBolt;
 				script2.active=false;
 				_key_press = "";
 			}

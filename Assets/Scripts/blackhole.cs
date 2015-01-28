@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 
@@ -8,9 +9,13 @@ public class Blackhole : MonoBehaviour {
 	public float time = 5.0f;
 	public float radius = 10.0f;
 	public float power = -100f; //implosion
+	private GameObject particlehole;
 
 	void Start () 
 	{
+		Object prefab = AssetDatabase.LoadAssetAtPath("Assets/ParticlePack/Prefabs/mystical_01.prefab", typeof(GameObject));
+		particlehole = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+		particlehole.transform.position = gameObject.transform.position;
 	}
 	
 	void Update () 
@@ -27,7 +32,9 @@ public class Blackhole : MonoBehaviour {
 			}
 		} 
 		else {
+			Destroy (particlehole);
 			Destroy (gameObject);
+
 				}
 		
 	}
